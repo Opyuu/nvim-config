@@ -8,10 +8,18 @@ local M = {}
 M.base46 = {
     theme = "github_dark",
 
-    -- hl_override = {
-    -- 	Comment = { italic = true },
-    -- 	["@comment"] = { italic = true },
+    -- changed_themes = {
+    --     github_dark = {
+    --         base_16 = {
+    --             base09 = "7BF8E1"
+    --         }
+    --     }
     -- },
+
+    hl_override = {
+        Comment = { italic = true },
+        ["@comment"] = { italic = true },
+    },
 }
 
 -- M.nvdash = { load_on_startup = true }
