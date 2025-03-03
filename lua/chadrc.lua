@@ -8,17 +8,46 @@ local M = {}
 M.base46 = {
     theme = "github_dark",
 
-    -- changed_themes = {
-    --     github_dark = {
-    --         base_16 = {
-    --             base09 = "7BF8E1"
-    --         }
-    --     }
-    -- },
-
     hl_override = {
         Comment = { italic = true },
         ["@comment"] = { italic = true },
+
+        -- Operators 
+        Operator = { fg = "#60A498" },
+        ["@operator"] = { fg = "#60A498" },
+        ["@punctuation.delimiter"] = { fg = "#60A498" },
+        ["@tag.delimiter"] = { fg = "#60A498" },
+
+        -- Keywords
+        Keyword = { fg = "#7BF8E1", bold = true },
+        ["@keyword"] = { fg = "#7BF8E1", bold = true },
+        ["@keyword.repeat"] = { fg = "#7BF8E1", bold = true },
+        ["@keyword.conditional"] = { fg = "#7BF8E1", bold = true },
+        ["@keyword.return"] = { fg = "#7BF8E1", bold = true },
+        ["@type.builtin"] = { fg = "#7BF8E1" },
+        ["Boolean"] = { fg = "#7BF8E1", bold = true },
+
+        -- Function calls & constructors & overloads
+        Function = { fg = "#FF9CEA" },
+        ["@function"] = { fg = "#FF9CEA" },
+        ["@function.method"] = { fg = "#FF9CEA" },
+        ["@function.call"] = { fg = "#FF9CEA" },
+        ["@constructor"] = { fg = "#FF9CEA" },
+
+        -- Punctuation
+        ["@punctuation.bracket"] = { fg = "white", bold = true },
+
+        -- Literals
+        ["@string"] = { fg = "#B5F6BA" },
+        ["@number"] = { fg = "#86DBFD" },
+
+        -- Modules & namespaces
+        ["@module"] = { fg = "#F6E9CB" },
+        -- ["Type"] = { fg = "#FFEE12"},
+
+        -- Variables
+        ["@constant"] = { fg = "#86DBFD", bold = true },
+        ["@variable.parameter"] = { fg = "#ff7f8d" },
     },
 }
 
