@@ -11,6 +11,8 @@ end
 
 -- Tab stops
 vim.opt.rtp:prepend(lazypath)
+
+-- System clipboard
 vim.opt.clipboard = "unnamedplus"
 
 
