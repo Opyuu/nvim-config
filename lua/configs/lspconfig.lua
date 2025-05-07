@@ -3,7 +3,7 @@ require("nvchad.configs.lspconfig").defaults()
 
 local lspconfig = require "lspconfig"
 
-local servers = { "html", "cssls", "svelte", "ts_ls" }
+local servers = { "html", "cssls", "svelte", "ts_ls", "glsl_analyzer" }
 local nvlsp = require "nvchad.configs.lspconfig"
 
 local on_attach = function(client, bufnr)

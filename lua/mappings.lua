@@ -6,6 +6,7 @@ local map = vim.keymap.set
 
 map("n", ";", ":", { desc = "CMD enter command mode" })
 map("i", "jk", "<ESC>")
+map("i", "¬", "|")
 
 map("n", "<leader>ca", ":%y+<CR>", { desc = "yank the entire buffer" })
 

@@ -25,6 +25,7 @@ M.base46 = {
         ["@keyword.conditional"] = { fg = "#7BF8E1", bold = true },
         ["@keyword.return"] = { fg = "#7BF8E1", bold = true },
         ["@type.builtin"] = { fg = "#7BF8E1" },
+        ["@variable.builtin"] = { fg = "#7BF8E1", bold = true },
         ["Boolean"] = { fg = "#7BF8E1", bold = true },
 
         -- Function calls & constructors & overloads
@@ -43,7 +44,7 @@ M.base46 = {
 
         -- Modules & namespaces
         ["@module"] = { fg = "#F6E9CB" },
-        -- ["Type"] = { fg = "#FFEE12"},
+        ["Type"] = { fg = "#FFEE12"},
 
         -- Variables
         ["@constant"] = { fg = "#86DBFD", bold = true },
