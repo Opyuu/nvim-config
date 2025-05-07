@@ -12,7 +12,7 @@ M.base46 = {
         Comment = { italic = true },
         ["@comment"] = { italic = true },
 
-        -- Operators 
+        -- Operators
         Operator = { fg = "#60A498" },
         ["@operator"] = { fg = "#60A498" },
         ["@punctuation.delimiter"] = { fg = "#60A498" },
@@ -44,7 +44,7 @@ M.base46 = {
 
         -- Modules & namespaces
         ["@module"] = { fg = "#F6E9CB" },
-        ["Type"] = { fg = "#FFEE12"},
+        -- ["Type"] = { fg = "#FFEE12"},
 
         -- Variables
         ["@constant"] = { fg = "#86DBFD", bold = true },
@@ -52,11 +52,11 @@ M.base46 = {
     },
 }
 
--- M.nvdash = { load_on_startup = true }
--- M.ui = {
---       tabufline = {
---          lazyload = false
---      }
---}
+M.nvdash = { load_on_startup = true }
+M.ui = {
+    tabufline = {
+        lazyload = false,
+    },
+}
 
 return M
