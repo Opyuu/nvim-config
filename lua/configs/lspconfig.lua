@@ -6,17 +6,10 @@ local lspconfig = require "lspconfig"
 local servers = { "html", "cssls", "svelte", "ts_ls", "glsl_analyzer" }
 local nvlsp = require "nvchad.configs.lspconfig"
 
-local on_attach = function(client, bufnr)
-    nvlsp.on_attach(client, bufnr)
-
-    if client.supports_method "textDocument/inlayHint" then
-        require("lsp-inlayhints").on_attach(client, bufnr)
-    end
-end
 
 for _, lsp in ipairs(servers) do
     lspconfig[lsp].setup {
-        on_attach = on_attach,
+        on_attach = nvlsp.on_attach,
         on_init = nvlsp.on_init,
         capabilities = nvlsp.capabilities,
     }
@@ -47,4 +40,8 @@ lspconfig.clangd.setup {
             "-Wshift-op-parentheses",
         },
     },
+}
+
+lspconfig.java_language_server.setup {
+    capabilities = nvlsp.capabilities,
 }
