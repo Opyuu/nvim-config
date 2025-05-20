@@ -3,9 +3,8 @@ require("nvchad.configs.lspconfig").defaults()
 
 local lspconfig = require "lspconfig"
 
-local servers = { "html", "cssls", "svelte", "ts_ls", "glsl_analyzer" }
+local servers = { "html", "cssls", "svelte", "ts_ls", "glsl_analyzer", "jdtls" }
 local nvlsp = require "nvchad.configs.lspconfig"
-
 
 for _, lsp in ipairs(servers) do
     lspconfig[lsp].setup {
@@ -20,6 +19,7 @@ lspconfig.clangd.setup {
     cmd = {
         "clangd",
         "--background-index",
+        "--enable-config",
         "--clang-tidy",
     },
     init_options = {
@@ -42,6 +42,3 @@ lspconfig.clangd.setup {
     },
 }
 
-lspconfig.java_language_server.setup {
-    capabilities = nvlsp.capabilities,
-}

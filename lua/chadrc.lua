@@ -23,9 +23,11 @@ M.base46 = {
         ["@keyword"] = { fg = "#7BF8E1", bold = true },
         ["@keyword.repeat"] = { fg = "#7BF8E1", bold = true },
         ["@keyword.conditional"] = { fg = "#7BF8E1", bold = true },
+        ["@keyword.exception"] = { fg = "#7BF8E1", bold = true },
         ["@keyword.return"] = { fg = "#7BF8E1", bold = true },
         ["@type.builtin"] = { fg = "#7BF8E1" },
         ["@variable.builtin"] = { fg = "#7BF8E1", bold = true },
+        ["@constant.builtin"] = { fg = "#7BF8E1", bold = true },
         ["Boolean"] = { fg = "#7BF8E1", bold = true },
 
         -- Function calls & constructors & overloads
