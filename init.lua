@@ -15,6 +15,12 @@ vim.opt.rtp:prepend(lazypath)
 -- System clipboard
 vim.opt.clipboard = "unnamedplus"
 
+-- Folding
+vim.opt.foldmethod = "expr"
+vim.opt.foldexpr = "nvim_treesitter#foldexpr()"
+vim.opt.foldenable = false
+vim.opt.foldlevel = 99
+
 local lazy_config = require "configs.lazy"
 
 -- load plugins
@@ -44,9 +50,11 @@ end)
 vim.api.nvim_create_autocmd("LspAttach", {
     callback = function(args)
         local client = vim.lsp.get_client_by_id(args.data.client_id)
+        if client == nil then
+            return
+        end
         if client.server_capabilities.inlayHintProvider then
             vim.lsp.inlay_hint.enable(true)
         end
     end,
 })
-

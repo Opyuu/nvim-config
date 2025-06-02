@@ -92,4 +92,31 @@ return {
         event = "LspAttach",
         opts = {},
     },
+    {
+        "m4xshen/hardtime.nvim",
+        lazy = false,
+        dependencies = { "MunifTanjim/nui.nvim" },
+        opts = {},
+    },
+    {
+        "rcarriga/nvim-notify",
+        lazy = false,
+        config = function()
+            vim.notify = require "notify"
+        end,
+    },
+    {
+        "unblevable/quick-scope",
+        event = "VimEnter", -- Lazy load on Vim enter
+    },
+    {
+        "kylechui/nvim-surround",
+        version = "^3.0.0", -- Use for stability; omit to use `main` branch for the latest features
+        event = "VeryLazy",
+        config = function()
+            require("nvim-surround").setup {
+                -- Configuration here, or leave empty to use defaults
+            }
+        end,
+    },
 }
