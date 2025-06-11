@@ -46,12 +46,15 @@ M.base46 = {
 
         -- Modules & namespaces
         ["@module"] = { fg = "#F6E9CB" },
-        -- ["Type"] = { fg = "#FFEE12"},
 
         -- Variables
         ["@constant"] = { fg = "#86DBFD", bold = true },
         ["@variable.parameter"] = { fg = "#ff7f8d" },
     },
+    highlights = {
+        QuickScopePrimary = { style = "bold,underline" },   -- Primary highlight (first match)
+        QuickScopeSecondary = { style = "bold,underline" }, -- Secondary highlight (second match)
+    }
 }
 
 M.nvdash = { load_on_startup = true }

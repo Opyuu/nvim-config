@@ -107,6 +107,12 @@ return {
     },
     {
         "unblevable/quick-scope",
+        config = function()
+            vim.cmd [[
+                highlight QuickScopePrimary guifg='#e356a7' gui=bold,underline cterm=bold,underline
+                highlight QuickScopeSecondary guifg='#75d7ec' gui=bold,underline cterm=bold,underline
+            ]]
+        end,
         event = "VimEnter", -- Lazy load on Vim enter
     },
     {
