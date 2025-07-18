@@ -1,0 +1,3 @@
+require('neocord').setup({
+
+})

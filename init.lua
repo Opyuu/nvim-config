@@ -1,6 +1,6 @@
 vim.g.base46_cache = vim.fn.stdpath "data" .. "/base46/"
 vim.g.mapleader = " "
-
+-- TODO: abc
 -- bootstrap lazy and all plugins
 local lazypath = vim.fn.stdpath "data" .. "/lazy/lazy.nvim"
 
@@ -13,13 +13,16 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 -- System clipboard
-vim.opt.clipboard = "unnamedplus"
-
+-- vim.opt.clipboard = "unnamedplus"
+vim.opt.clipboard = ""
 -- Folding
 vim.opt.foldmethod = "expr"
 vim.opt.foldexpr = "nvim_treesitter#foldexpr()"
 vim.opt.foldenable = false
 vim.opt.foldlevel = 99
+
+vim.opt.relativenumber = true
+-- vim.opt.cursorline = true
 
 local lazy_config = require "configs.lazy"
 
@@ -55,6 +58,17 @@ vim.api.nvim_create_autocmd("LspAttach", {
         end
         if client.server_capabilities.inlayHintProvider then
             vim.lsp.inlay_hint.enable(true)
+        end
+    end,
+})
+
+vim.api.nvim_create_autocmd("InsertLeave", {
+    callback = function()
+        if
+            require("luasnip").session.current_nodes[vim.api.nvim_get_current_buf()]
+            and not require("luasnip").session.jump_active
+        then
+            require("luasnip").unlink_current()
         end
     end,
 })

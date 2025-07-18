@@ -21,6 +21,7 @@ lspconfig.clangd.setup {
         "--background-index",
         "--enable-config",
         "--clang-tidy",
+        "--log=verbose",
     },
     init_options = {
         fallbackFlags = {
@@ -42,3 +43,9 @@ lspconfig.clangd.setup {
     },
 }
 
+vim.diagnostic.config {
+    virtual_text = false,
+    -- signs = false,
+    -- underline = false,
+    -- update_in_insert = false,
+}

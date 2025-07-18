@@ -32,6 +32,10 @@ return {
     {
         "folke/todo-comments.nvim",
         dependencies = { "nvim-lua/plenary.nvim" },
+        opts = {
+            -- Your configuration options here (optional)
+        },
+        event = "VimEnter", -- Load immediately
     },
     {
         "mfussenegger/nvim-dap",
@@ -123,6 +127,71 @@ return {
             require("nvim-surround").setup {
                 -- Configuration here, or leave empty to use defaults
             }
+        end,
+    },
+    {
+        "NStefan002/screenkey.nvim",
+        lazy = false,
+        version = "*",
+    },
+    {
+        "edluffy/hologram.nvim",
+        config = function()
+            require("hologram").setup {
+                auto_display = true,
+            }
+        end,
+    },
+    {
+        "HiPhish/rainbow-delimiters.nvim",
+    },
+    {
+        "lukas-reineke/indent-blankline.nvim",
+        config = function()
+            require "configs.rainbow"
+        end,
+    },
+    {
+        "Mythos-404/xmake.nvim",
+        version = "^3",
+        lazy = true,
+        event = "BufReadPost",
+        config = true,
+    },
+    -- {
+    --     "sontungexpt/better-diagnostic-virtual-text",
+    --     event = "LspAttach",
+    --     dependencies = { "nvim-lua/plenary.nvim" },
+    --     config = function()
+    --         vim.diagnostic.config { virtual_text = false }
+    --         local opts = {
+    --             ui = {
+    --                 wrap_line_after = false,
+    --                 left_kept_space = 3,
+    --                 right_kept_space = 3,
+    --                 arrow = "  ",
+    --                 up_arrow = "  ",
+    --                 down_arrow = "  ",
+    --                 above = true,
+    --             },
+    --             priority = 2003, -- the priority of virtual text
+    --             inline = false,
+    --         }
+    --         require("better-diagnostic-virtual-text").setup(opts)
+    --
+    --         vim.diagnostic.enable(true, { bufnr = vim.api.nvim_get_current_buf() }) -- Enable the plugin for the current buffer.
+    --         vim.keymap.set("n", "<leader>de", function()
+    --             vim.diagnostic.enable(true, { bufnr = vim.api.nvim_get_current_buf() }) -- Enable the plugin for the current buffer.
+    --         end, { desc = "Toggle better diagnostics" })
+    --     end,
+    -- },
+    {
+        "rachartier/tiny-inline-diagnostic.nvim",
+        event = "VeryLazy", -- Or `LspAttach`
+        priority = 1000, -- needs to be loaded in first
+        config = function()
+            local opts = require("configs.tiny-inline")
+            require("tiny-inline-diagnostic").setup(opts)
         end,
     },
 }

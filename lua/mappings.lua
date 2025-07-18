@@ -24,3 +24,8 @@ map("n", "<leader>dr", "<cmd> DapContinue <CR>", { desc = "Start or resume the d
 map("n", "<leader>sa", function()
     require("tiny-code-action").code_action()
 end, { desc = "Suggestion menu" })
+
+-- Force reload config
+map("n", "<leader>rr", "<cmd>luafile %<cr>", { desc = "Reload config" })
+
+map("n", "<leader>td", "<cmd>TodoQuickFix<cr>", { desc = "Open to-do list" })
