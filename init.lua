@@ -24,6 +24,8 @@ vim.opt.foldlevel = 99
 vim.opt.relativenumber = true
 -- vim.opt.cursorline = true
 
+vim.opt.shell = "fish"
+
 local lazy_config = require "configs.lazy"
 
 -- load plugins
