@@ -26,6 +26,7 @@ return {
                 "cpp",
                 "haskell",
                 "java",
+                "python",
             },
         },
     },
@@ -190,7 +191,7 @@ return {
         event = "VeryLazy", -- Or `LspAttach`
         priority = 1000, -- needs to be loaded in first
         config = function()
-            local opts = require("configs.tiny-inline")
+            local opts = require "configs.tiny-inline"
             require("tiny-inline-diagnostic").setup(opts)
         end,
     },
