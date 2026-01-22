@@ -3,8 +3,9 @@ require("nvchad.configs.lspconfig").defaults()
 
 local lspconfig = require "lspconfig"
 
-local servers = { "html", "cssls", "svelte", "ts_ls", "glsl_analyzer", "jdtls", "basedpyright", "lemminx" }
+local servers = { "html", "cssls", "svelte", "ts_ls", "glsl_analyzer", "jdtls", "basedpyright", "lemminx", "rust_analyzer" }
 local nvlsp = require "nvchad.configs.lspconfig"
+
 
 for _, lsp in ipairs(servers) do
     lspconfig[lsp].setup {
@@ -48,4 +49,12 @@ vim.diagnostic.config {
     -- signs = false,
     -- underline = false,
     -- update_in_insert = false,
+}
+
+lspconfig.harper_ls.setup{
+    settings = {
+        ["harper-ls"] = {
+            dialect = "British"
+        }
+    }
 }

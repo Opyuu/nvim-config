@@ -8,7 +8,6 @@ local map = vim.keymap.set
 map("i", "jk", "<ESC>")
 map("i", "¬", "|") -- To help with typing | on UK layouts
 map("n", "<leader>ca", ":%y+<CR>", { desc = "yank the entire buffer" })
-map("i", "##", "\\") -- To help with typing \ on UK layouts
 
 map("n", "0", "^", { noremap = true, silent = true }) -- ^ has preferred behaviour over 0
 map("n", "^", "0") -- Map ^ to 0 in case.

@@ -27,6 +27,7 @@ return {
                 "haskell",
                 "java",
                 "python",
+                "rust",
             },
         },
     },
@@ -221,8 +222,8 @@ return {
                     path = "~/Documents/Vaults/COMP0009",
                 },
                 {
-                    name = "work",
-                    path = "~/vaults/work",
+                    name = "COMP0119",
+                    path = "~/Documents/Vaults/COMP0199/",
                 },
             },
 
