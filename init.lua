@@ -22,6 +22,9 @@ vim.opt.foldenable = false
 vim.opt.foldlevel = 99
 vim.opt.conceallevel = 2
 
+-- Disable Treesitter indent for C++ to fix namespace indentation
+vim.opt.indentexpr = ''
+
 vim.opt.relativenumber = true
 -- vim.opt.cursorline = true
 
