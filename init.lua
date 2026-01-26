@@ -22,9 +22,22 @@ vim.opt.foldlevel = 99
 vim.opt.conceallevel = 2
 
 
+-- Shell
+vim.opt.shell = "fish"
+
+
 -- Annoying QOL fixes
 vim.opt.fillchars:append { eob = " " }
 vim.opt.signcolumn = "yes" -- prevents text shifting
+
+-- The one terminal issue
+local function SaveAndExit()
+	vim.api.nvim_command(":wa")
+	vim.api.nvim_command(":qa")
+end
+
+vim.api.nvim_create_user_command("Wqa", SaveAndExit, {})
+vim.api.nvim_set_keymap("c", "wqa", "Wqa", { noremap = true, silent = false })
 
 
 require("config.mappings")
