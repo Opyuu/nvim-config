@@ -1,10 +1,14 @@
+
 return {
-    "nvzone/floaterm",
-    dependencies = "nvzone/volt",
-    opts = {},
-    cmd = "FloatermToggle",
+    "Opyuu/floaterm",
+    dependencies = {"nvzone/volt"},
+    event = "BufEnter",
     config = function ()
-        vim.keymap.set("n", "<A-i>", require("floaterm").toggle, { desc = "Open floating terminal" })
+        require("floaterm").setup{
+            border = "rounded"
+        }
+
+        vim.keymap.set({"n", "t"}, "<A-i>", require("floaterm").toggle, { desc = "Open floating terminal" })
     end
-}          
+}
 

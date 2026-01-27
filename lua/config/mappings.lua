@@ -20,3 +20,9 @@ vim.keymap.set("n", "^", "0")
 vim.keymap.set("n", "<C-x>", "<Nop>")
 vim.keymap.set("n", "<C-a>", "<Nop>")
 vim.keymap.set("n", "J", "<Nop>") -- This stupid join line thing really pisses me off
+
+
+-- Plugins
+vim.keymap.set("n", "<leader>fm", function ()
+    require("conform").format{ lsp_fallback = true }    
+end)
