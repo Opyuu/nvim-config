@@ -13,8 +13,28 @@ vim.opt.shiftwidth = 4
 vim.opt.smarttab = true
 vim.opt.smartindent = true
 
--- Rounded corners!
-vim.o.winborder = "rounded"
+-- Rounded corners! Keep the main Lazy window rounded but strip the backdrop border.
+vim.opt.winborder = "rounded"
+vim.api.nvim_create_autocmd("FileType", {
+    pattern = "lazy",
+    callback = function()
+        -- Run slightly later so both Lazy windows exist.
+        vim.schedule(function()
+            local columns, lines = vim.o.columns, vim.o.lines
+            for _, win in ipairs(vim.api.nvim_list_wins()) do
+                local cfg = vim.api.nvim_win_get_config(win)
+                if cfg.relative ~= "" then
+                    -- Treat the nearly full-screen backdrop as borderless.
+                    if cfg.width and cfg.height and cfg.width >= columns - 2 and cfg.height >= lines - 2 then
+                        pcall(vim.api.nvim_win_set_config, win, { border = "none" })
+                    else
+                        pcall(vim.api.nvim_win_set_config, win, { border = "rounded" })
+                    end
+                end
+            end
+        end)
+    end,
+})
 
 -- Folding
 vim.opt.foldmethod = "expr"
