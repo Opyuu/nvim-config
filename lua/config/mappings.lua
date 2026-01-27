@@ -22,6 +22,9 @@ vim.keymap.set("n", "<C-a>", "<Nop>")
 vim.keymap.set("n", "J", "<Nop>") -- This stupid join line thing really pisses me off
 
 
+vim.keymap.set("n", "<leader>/", "gcc", { desc = "Toggle comments", remap = true })
+vim.keymap.set("v", "<leader>/", "gc", { desc = "Toggle comments (visual mode)", remap = true })
+
 -- Plugins
 vim.keymap.set("n", "<leader>fm", function ()
     require("conform").format{ lsp_fallback = true }    
