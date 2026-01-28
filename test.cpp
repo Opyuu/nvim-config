@@ -2,7 +2,9 @@
 #include <unordered_map>
 namespace {
 
+ 
 void f123(int abc ) {
+    "#FFFFFF"
 }
 
 int main() {
