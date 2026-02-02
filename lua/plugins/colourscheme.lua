@@ -1,5 +1,5 @@
 return {
-    dir = "~/GitHub/miku.nvim/",
+    "Opyuu/miku.nvim",
     opts = {},
     priority = 1000
 }
