@@ -7,14 +7,21 @@ return {
     config = function()
         require("barbar").setup {
             icons = {
+                buffer_index = true,
                 separator = { left = "│", right = "" },
+                visible = {
+                    separator = { left = "│", right = "" },
+                },
+                inactive = {
+                    separator = { left = "│", right = "" },
+                },
             },
             sidebar_filetypes = {
                 NvimTree = true,
             },
-            hightlight_visible = false
+            hightlight_visible = false,
         }
-        vim.api.nvim_set_hl(0, "BufferTabpageFill", { bg = "NONE" })
+        -- vim.api.nvim_set_hl(0, "BufferTabpageFill", { bg: "NONE" })
 
         -- I'm effectively trying to preserve a browser's tab movement keys, except we hold alt with everything.
         vim.keymap.set({ "n", "i" }, "<A-,>", "<cmd>BufferPrevious<CR>", { desc = "Previous tab" })

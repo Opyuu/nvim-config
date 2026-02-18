@@ -25,6 +25,12 @@ vim.keymap.set("n", "J", "<Nop>") -- This stupid join line thing really pisses m
 vim.keymap.set("n", "<leader>/", "gcc", { desc = "Toggle comments", remap = true })
 vim.keymap.set("v", "<leader>/", "gc", { desc = "Toggle comments (visual mode)", remap = true })
 
+vim.keymap.set("n", "<leader>ca", ":%y+<CR>", { desc = "Yank the entire buffer into unnamedplus" })
+
+vim.keymap.set("n", "<leader>sa", function()
+    require("tiny-code-action").code_action()
+end, { desc = "Open suggestions menu" })
+
 -- Plugins
 vim.keymap.set("n", "<leader>fm", function ()
     require("conform").format{ lsp_fallback = true }    

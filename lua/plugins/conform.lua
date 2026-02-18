@@ -1,5 +1,8 @@
 REQUIRED_FORMATTERS = {
-    "stylua", "prettier", "clang-format", "checkstyle"
+    "stylua",
+    "prettier",
+    "clang-format",
+    "checkstyle",
 }
 
 return {
@@ -10,8 +13,12 @@ return {
             lua = { "stylua" },
             css = { "prettier" },
             html = { "prettier" },
+            typescript = { "prettier" },
+            typescriptreact = { "prettier" },
+            javascript = { "prettier" },
+            javascriptreact = { "prettier" },
             cpp = { "clang-format" },
-            java = { "checkstyle" }
+            java = { "checkstyle" },
         },
-    }
+    },
 }

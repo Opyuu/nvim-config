@@ -3,8 +3,10 @@ vim.g.have_nerd_font = true
 vim.opt.termguicolors = true
 
 -- Line numbers (relative)
-vim.o.number = true
-vim.o.relativenumber = true
+vim.opt.number = true
+vim.opt.relativenumber = true
+vim.opt.cursorlineopt = "number"
+vim.opt.cursorline = true
 
 -- Indentation
 vim.opt.expandtab = true

@@ -9,15 +9,18 @@ REQUIRED_LSPS = {
     "lua-language-server",
     "clangd",
     "tsgo",
+    "css-lsp"
 }
 
 local config = function()
+    local lspconfig = require "lspconfig"
     local navic = require "nvim-navic"
 
     for _, server in ipairs(REQUIRED_LSPS) do
         vim.lsp.config(server, {
             on_attach = function(client, bufnr)
                 navic.attach(client, bufnr)
+                vim.lsp.inlay_hint.enable(true, { bufnr = bufnr })
             end,
         })
         vim.lsp.enable(server)

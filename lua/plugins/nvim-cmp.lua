@@ -43,9 +43,25 @@ local opts = function()
             { name = "nvim_lua" },
             { name = "async_path" },
         },
+
+        formatting = {
+            fields = { "abbr", "kind", "menu" },
+            format = function(entry, item)
+                -- Truncate long completion items
+                local max_width = 50
+                if #item.abbr > max_width then
+                    item.abbr = item.abbr:sub(1, max_width - 1) .. '...'
+                end
+                
+                return item
+            end,
+        },
+
         window = {
             completion = cmp.config.window.bordered{
-                border = "rounded"
+                border = "rounded",
+                max_width = 80,
+                max_height = 20,
             },
             documentation = cmp.config.window.bordered{
                 border = "rounded"
