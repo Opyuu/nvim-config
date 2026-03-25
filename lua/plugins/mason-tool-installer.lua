@@ -12,6 +12,6 @@ return {
     "WhoIsSethDaniel/mason-tool-installer.nvim",
     dependencies = { "mason-org/mason.nvim" },
     opts = {
-        ensure_installed = concat(REQUIRED_FORMATTERS, REQUIRED_LSPS)
+        ensure_installed = concat(REQUIRED_FORMATTERS, REQUIRED_MASON_LSPS)
     }
 }
