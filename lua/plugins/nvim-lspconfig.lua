@@ -33,7 +33,9 @@ local config = function()
 
     local default_server_config = {
         on_attach = function(client, bufnr)
-            navic.attach(client, bufnr)
+            if client.server_capabilities and client.server_capabilities.documentSymbolProvider then
+                navic.attach(client, bufnr)
+            end
             vim.lsp.inlay_hint.enable(true, { bufnr = bufnr })
         end,
     }
