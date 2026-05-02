@@ -10,6 +10,7 @@ local languages = {
     "java",
     "python",
     "rust",
+    "markdown"
 }
 
 return {
@@ -23,11 +24,5 @@ return {
             incremental_selection = { enable = true },
 	        textobjects = { enable = true },
         }
-
-        vim.api.nvim_create_autocmd("FileType", {
-            callback = function()
-                -- vim.bo.indentexpr = "v:lua.require'nvim-treesitter'.indentexpr()"
-            end,
-        })
     end
 }

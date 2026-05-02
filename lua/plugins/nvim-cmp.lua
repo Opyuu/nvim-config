@@ -1,5 +1,5 @@
 local opts = function()
-    local cmp = require("cmp")
+    local cmp = require "cmp"
 
     return {
         completion = { completeopt = "menu,menuone" },
@@ -42,6 +42,7 @@ local opts = function()
             { name = "buffer" },
             { name = "nvim_lua" },
             { name = "async_path" },
+            { name = "spell" },
         },
 
         formatting = {
@@ -50,26 +51,25 @@ local opts = function()
                 -- Truncate long completion items
                 local max_width = 50
                 if #item.abbr > max_width then
-                    item.abbr = item.abbr:sub(1, max_width - 1) .. '...'
+                    item.abbr = item.abbr:sub(1, max_width - 1) .. "..."
                 end
-                
+
                 return item
             end,
         },
 
         window = {
-            completion = cmp.config.window.bordered{
+            completion = cmp.config.window.bordered {
                 border = "rounded",
                 max_width = 80,
                 max_height = 20,
             },
-            documentation = cmp.config.window.bordered{
-                border = "rounded"
+            documentation = cmp.config.window.bordered {
+                border = "rounded",
             },
-        }
+        },
     }
 end
-
 
 return {
     "hrsh7th/nvim-cmp",
@@ -82,7 +82,7 @@ return {
             "hrsh7th/cmp-nvim-lsp",
             "hrsh7th/cmp-buffer",
             "https://codeberg.org/FelipeLema/cmp-async-path.git",
-        }
+        },
     },
-    opts = opts
+    opts = opts,
 }

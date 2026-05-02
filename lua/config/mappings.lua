@@ -32,6 +32,9 @@ end, { desc = "Open suggestions menu" })
 
 vim.keymap.set("n", "<leader>td", "<cmd>TodoTelescope<cr>", { desc = "Open todo list search." })
 
+vim.keymap.set("i", "<Nul>", "<Space>", { desc = "Remove annoying ctrl + space behaviour" })
+vim.keymap.set("i", "<C-@>", "<Space>")
+vim.keymap.set("i", "<C-Space>", "<Space>")
 -- Plugins
 vim.keymap.set("n", "<leader>fm", function()
     require("conform").format { lsp_fallback = true }
